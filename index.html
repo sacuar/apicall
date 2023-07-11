@@ -1,1 +1,52 @@
-There was an error committing your changes: File could not be edited0
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>API Example</h1>
+    <div id="message"></div>
+
+    <script>
+        // Function to handle GET request
+        function handleGetRequest() {
+            $.ajax({
+                url: "https://your-username.github.io/your-repo-name/api",
+                method: "GET",
+                success: function (data) {
+                    $("#message").text("GET Request: " + data.message);
+                }
+            });
+        }
+
+        // Function to handle POST request
+        function handlePostRequest() {
+            $.ajax({
+                url: "https://your-username.github.io/your-repo-name/api",
+                method: "POST",
+                data: { message: "Hello, POST!" },
+                success: function (data) {
+                    $("#message").text("POST Request: " + data.message);
+                }
+            });
+        }
+
+        // Function to handle PUT request
+        function handlePutRequest() {
+            $.ajax({
+                url: "https://your-username.github.io/your-repo-name/api",
+                method: "PUT",
+                data: { message: "Hello, PUT!" },
+                success: function (data) {
+                    $("#message").text("PUT Request: " + data.message);
+                }
+            });
+        }
+    </script>
+
+    <button onclick="handleGetRequest()">Send GET Request</button>
+    <button onclick="handlePostRequest()">Send POST Request</button>
+    <button onclick="handlePutRequest()">Send PUT Request</button>
+</body>
+</html>
